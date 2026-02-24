@@ -17,10 +17,10 @@ function Dashboard() {
               Portfolio
             </p>
             <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-              Nhat Truong
+              Nhat Truong       
             </h1>
             <p className="text-lg font-semibold text-gray-700">
-              AI & Data Science | Health Predictive Modeling | Machine Learning Research
+              Medical Imaging | Computational Complexity | Data Science
             </p>
             <p className="max-w-xl text-base text-gray-600">
               I am a Computer Science student specializing in machine learning,
@@ -30,12 +30,6 @@ function Dashboard() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-            <DynamicWords />
-            <p className="mt-2 text-sm text-gray-500">
-              Building practical, research-driven systems.
-            </p>
-          </div>
 
           <div className="flex flex-wrap gap-3">
             <a
@@ -84,14 +78,15 @@ function Dashboard() {
                     About Me
                   </p>
                   <p className="text-base text-gray-700">
-                    I enjoy building AI systems that are reliable, explainable, and
-                    useful in healthcare settings.
+                    Beside research, I enjoy trying new foods and traveling. I'm also a part-time stock trader.
                   </p>
                 </div>
               </div>
             </div>
           </button>
           <p className="mt-3 text-center text-xs text-gray-500">Click the photo to flip.</p>
+             <p className="absolute bottom-4 left-0 right-0 text-center text-sm font-semibold text-gray-700"> <DynamicWords /> </p>
+
         </div>
       </div>
     </section>

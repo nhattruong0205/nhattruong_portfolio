@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import Reaadded the scroll ct, { useState, useEffect } from 'react';
 
 function DynamicWords() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const words = ['Coder', 'Data Scientist', 'Researcher'];
+  const words = ['Developer', 'Data Scientist', 'Researcher'];
   const [currentWord, setCurrentWord] = useState('');
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -31,7 +31,7 @@ function DynamicWords() {
 
   return (
     <div className="text-3xl font-bold text-center">
-      <span> I'm Nhat Truong, {currentWord}</span>
+      <span> {currentWord}</span>
     </div>
   );
 }
