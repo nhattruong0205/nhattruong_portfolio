@@ -40,7 +40,7 @@ function Dashboard() {
               Research CV
             </a>
             <a
-              href="/nhat_truong_cv.pdf"
+              href="/1-page_cv.pdf"
               download
               className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-sm font-semibold text-gray-700 transition hover:-translate-y-0.5 hover:border-gray-400 hover:text-gray-900"
             >

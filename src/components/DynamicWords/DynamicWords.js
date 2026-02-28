@@ -1,4 +1,4 @@
-import Reaadded the scroll ct, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function DynamicWords() {
   // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -18,6 +18,24 @@ function NavigationBar() {
           Education
         </a>
         <a
+          href="#research"
+          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
+        >
+          Research
+        </a>
+        <a
+          href="#work"
+          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
+        >
+          Work & Teaching
+        </a>
+        <a
+          href="#projects"
+          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
+        >
+          Projects
+        </a>
+        <a
           href="#aboutme"
           className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
         >
