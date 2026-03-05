@@ -9,11 +9,11 @@ function Research() {
       <div className="space-y-4">
         <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-lg font-semibold">Lab / Group Name</h3>
-            <span className="text-sm text-gray-500">Research Assistant • 2024–Present</span>
+            <h3 className="text-lg font-semibold"> Algorithms and Theory Group</h3>
+            <span className="text-sm text-gray-500">Summer 2024-Present</span>
           </div>
           <p className="mt-2 text-sm text-gray-600">
-            Short description of your research focus and outcomes.
+            Our work focuses on permutation arrays and permutation distance metrics.
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-gray-600">
             <li>Problem area, model, or system you worked on.</li>

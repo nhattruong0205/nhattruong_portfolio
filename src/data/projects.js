@@ -12,7 +12,8 @@ export const projects = [
     We then apply Google’s TimesFM time-series model to predict the next-interval values for these specific parameters. 
     In addition, we developed separate detection models for each parameter to identify potential diseases. 
     The current values help diagnose the user’s present condition, while the predicted values enable early detection of possible health risks.`,
-    tech: ['TensorFlow', 'Firebase'],
+    tech: ['TypeScript', 'JavaScript','Python','React','Next.js','Node.js','Express.js',
+      'Flask','SQLite','Prisma','JWT','WebSockets','TimesFM','Recharts','bcrypt','dotenv','Git'],
     videoEmbedUrl: 'https://www.youtube.com/embed/3Aw_9TBehsI',
     devpostUrl: 'https://devpost.com/software/axxess-sentinel?ref_content=my-projects-tab&ref_feature=my_projects',
   },
