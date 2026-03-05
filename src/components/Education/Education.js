@@ -22,7 +22,7 @@ const schools = [
   },
   {
     year: '2024-Present',
-    degree: 'M.S. Computer Science',
+    degree: 'Ph.D. Computer Science',
     name: 'University of Texas at Dallas',
     description: 'Richardson, Texas • GPA: 3.8',
     logo: utdallasLogo,
@@ -57,25 +57,15 @@ function Education() {
                   aria-hidden="true"
                 />
                 <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-                  <button
-                    type="button"
-                    className="flex w-full items-start justify-between gap-3 p-5 text-left"
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                    aria-expanded={isOpen}
-                  >
+                  <div className="flex items-start justify-between gap-3 p-5 text-left">
                     <div className="space-y-1">
                       <p className="text-lg font-semibold">{school.name}</p>
                       <p className="text-sm text-gray-600">{school.description}</p>
                     </div>
-                    <div className="flex shrink-0 items-center gap-3">
+                    <div className="flex shrink-0 items-center">
                       <img src={school.logo} alt={`${school.name} logo`} className="h-14 w-14 object-contain" />
-                      <span
-                        className={`inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white text-2xl text-gray-500 shadow-sm transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                        aria-hidden="true"
-                      >
-                      </span>
                     </div>
-                  </button>
+                  </div>
 
                   {isOpen && (
                     <div className="border-t border-gray-200 bg-gray-50 px-5 py-4">
@@ -87,6 +77,19 @@ function Education() {
                       </ul>
                     </div>
                   )}
+
+                  <div className="border-t border-gray-200 bg-white px-5 py-3">
+                    <div className="flex justify-center">
+                      <button
+                        type="button"
+                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                        aria-expanded={isOpen}
+                        className="inline-flex rounded-md border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700 hover:bg-blue-100"
+                      >
+                        {isOpen ? 'Hide courses' : 'View courses'}
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

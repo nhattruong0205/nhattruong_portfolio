@@ -37,7 +37,7 @@ function WorkTeaching() {
             <li> Fall 2024-Spring 2025: Teaching Assistant for Discrete Mathematics for Computing I(CS2305)</li>
             <li> Fall 2025: Teaching Assistant for Web Programming Languages(CS6314)</li>
             <li> Spring 2026: Teaching Assistant for Programming Languages Paradigm(CS4337)</li>
-            <li> Tool: HTML, CSS, JavaScript, SQL, MariaDB, Prolog, Lisp, Scheme</li>
+            <li> Tool: HTML, CSS, JavaScript, SQL, MariaDB, Prolog, Lisp, Scheme, Racket</li>
 
           </ul>
         </div>

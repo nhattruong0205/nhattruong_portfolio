@@ -1,10 +1,12 @@
 import React from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import Dashboard from './components/Dashboard/Dashboard';
 import Education from './components/Education/Education';
 import WorkTeaching from './components/WorkTeaching/WorkTeaching';
 import Research from './components/Research/Research';
 import Projects from './components/Projects/Projects';
+import ProjectDetail from './components/Projects/ProjectDetail';
 import AboutMe from './components/AboutMe/AboutMe';
 import ScrollSpy from './components/ScrollSpy/ScrollSpy';
 
@@ -17,7 +19,7 @@ const sections = [
   { id: 'aboutme', label: 'About' },
 ];
 
-function App() {
+function HomePage() {
   return (
     <div className="app-container">
       <NavigationBar />
@@ -41,6 +43,16 @@ function App() {
         <AboutMe/>
         </section>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
