@@ -5,23 +5,26 @@ import utdallasLogo from './UT dallas.jpg';
 
 const schools = [
   {
-    name: 'Evangel Christian Highschool',
-    location: 'Long Island City, New York',
-    period: '2017-2020 • GPA: 4.0',
+    year: '2017-2020',
+    degree: 'High School Diploma',
+    name: 'Evangel Christian High School',
+    description: 'Long Island City, New York • GPA: 4.0 • Rank: 4',
     logo: evangelLogo,  
     courses: ["Biology", "Chemistry", "Physics", "Calculus", "Statistics", "Global", "US History", "Bible"],
   },
   {
+    year: '2020-2024',
+    degree: 'B.S. Computer Science',
     name: 'Adelphi University, Honor College',
-    location: 'Garden City, New York',
-    period: '2020-2024 • GPA: 3.97',
+    description: 'Garden City, New York • GPA: 3.97 • Summa Cum Laude',
     logo: adelphiLogo,
     courses: ['Introduction to Machine Learning','Survey of Programming Languages','Data Structures','Operating System Practicum', 'Algorithms and Complexity', 'Software Engineering', 'Computer Architecture and Organization', 'Web Programming','Computer Networks', 'Operating Systems'],
   },
   {
+    year: '2024-Present',
+    degree: 'M.S. Computer Science',
     name: 'University of Texas at Dallas',
-    location: 'Richardson, Texas',
-    period: '2024-Present • GPA: 3.8',
+    description: 'Richardson, Texas • GPA: 3.8',
     logo: utdallasLogo,
     courses: ['Machine Learning', 'Design and Analysis of Computer Algorithms', 'Web Programming Languages','Artificial Intelligence', 'Database Design', 'Data Representation', 'Statistical Methods of Data Science', 'Natural Language Processing', 'Computer Vision'],
   },
@@ -37,53 +40,59 @@ function Education() {
         <p className="text-gray-600">Academic background and highlights.</p>
       </div>
 
-      {schools.map((school, index) => {
-        const isOpen = openIndex === index;
-        return (
-          <div
-            key={school.name}
-            className="rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <div
-              className="flex cursor-pointer items-center justify-between p-5"
-              role="button"
-              tabIndex={0}
-              onClick={() => setOpenIndex(isOpen ? null : index)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  setOpenIndex(isOpen ? null : index);
-                }
-              }}
-            >
-              <div className="flex flex-col gap-1">
-                <p className="text-lg font-semibold">{school.name}</p>
-                <p className="text-gray-600">{school.location}</p>
-                <p className="text-gray-600">{school.period}</p>
+      <div className="space-y-6">
+        {schools.map((school, index) => {
+          const isOpen = openIndex === index;
+          const isLastItem = index === schools.length - 1;
+          return (
+            <div key={school.name} className="grid grid-cols-1 gap-3 md:grid-cols-[190px_1fr] md:gap-6">
+              <div className="space-y-1 md:pt-5 md:text-right">
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">{school.year}</p>
+                <p className="text-sm text-gray-700">{school.degree}</p>
               </div>
-              <img src={school.logo} alt={`${school.name} logo`} className="h-14 w-14 object-contain" />
-            </div>
 
-            {isOpen && (
-              <div className="border-t border-gray-200 bg-gray-50 px-5 py-4">
-                <p className="text-sm font-semibold text-gray-700">Courses</p>
-                <ul className="mt-2 grid grid-cols-1 gap-x-6 gap-y-1 list-disc list-inside text-sm text-gray-600 sm:grid-cols-2">
-                  {school.courses.map((course) => (
-                    <li key={course}>{course}</li>
-                  ))}
-                </ul>
+              <div className={`relative border-l-2 border-gray-200 pl-8 ${isLastItem ? '' : 'pb-2'}`}>
+                <span
+                  className="absolute -left-[9px] top-6 inline-flex h-4 w-4 items-center justify-center rounded-full border-2 border-white bg-blue-500 shadow"
+                  aria-hidden="true"
+                />
+                <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <button
+                    type="button"
+                    className="flex w-full items-start justify-between gap-3 p-5 text-left"
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    aria-expanded={isOpen}
+                  >
+                    <div className="space-y-1">
+                      <p className="text-lg font-semibold">{school.name}</p>
+                      <p className="text-sm text-gray-600">{school.description}</p>
+                    </div>
+                    <div className="flex shrink-0 items-center gap-3">
+                      <img src={school.logo} alt={`${school.name} logo`} className="h-14 w-14 object-contain" />
+                      <span
+                        className={`inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white text-2xl text-gray-500 shadow-sm transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                        aria-hidden="true"
+                      >
+                      </span>
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div className="border-t border-gray-200 bg-gray-50 px-5 py-4">
+                      <p className="text-sm font-semibold text-gray-700">Courses</p>
+                      <ul className="mt-2 grid grid-cols-1 gap-x-6 gap-y-1 list-disc list-inside text-sm text-gray-600 sm:grid-cols-2">
+                        {school.courses.map((course) => (
+                          <li key={course}>{course}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-            <div className="flex justify-center pb-4">
-              <span
-                className={`inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white text-2xl text-gray-500 shadow-sm transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                aria-hidden="true"
-              >
-                ▾
-              </span>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </section>
   );
 }
