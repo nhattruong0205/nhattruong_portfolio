@@ -9,6 +9,7 @@ import Projects from './components/Projects/Projects';
 import ProjectDetail from './components/Projects/ProjectDetail';
 import AboutMe from './components/AboutMe/AboutMe';
 import ScrollSpy from './components/ScrollSpy/ScrollSpy';
+import CourseNotesDetail from './components/Education/CourseNotesDetail';
 
 const sections = [
   { id: 'dashboard', label: 'Home' },
@@ -51,6 +52,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
+      <Route path="/courses/:courseSlug" element={<CourseNotesDetail />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

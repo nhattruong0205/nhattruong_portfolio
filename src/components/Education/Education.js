@@ -1,34 +1,6 @@
 import { useState } from 'react';
-import evangelLogo from './Evangel Logo.png';
-import adelphiLogo from './Adelphi.jpg';
-import utdallasLogo from './UT dallas.jpg';
-
-const schools = [
-  {
-    year: '2017-2020',
-    degree: 'High School Diploma',
-    name: 'Evangel Christian High School',
-    description: 'Long Island City, New York • GPA: 4.0 • Rank: 4',
-    logo: evangelLogo,  
-    courses: ["Biology", "Chemistry", "Physics", "Calculus", "Statistics", "Global", "US History", "Bible"],
-  },
-  {
-    year: '2020-2024',
-    degree: 'B.S. Computer Science',
-    name: 'Adelphi University, Honor College',
-    description: 'Garden City, New York • GPA: 3.97 • Summa Cum Laude',
-    logo: adelphiLogo,
-    courses: ['Introduction to Machine Learning','Survey of Programming Languages','Data Structures','Operating System Practicum', 'Algorithms and Complexity', 'Software Engineering', 'Computer Architecture and Organization', 'Web Programming','Computer Networks', 'Operating Systems'],
-  },
-  {
-    year: '2024-Present',
-    degree: 'Ph.D. Computer Science',
-    name: 'University of Texas at Dallas',
-    description: 'Richardson, Texas • GPA: 3.8',
-    logo: utdallasLogo,
-    courses: ['Machine Learning', 'Design and Analysis of Computer Algorithms', 'Web Programming Languages','Artificial Intelligence', 'Database Design', 'Data Representation', 'Statistical Methods of Data Science', 'Natural Language Processing', 'Computer Vision'],
-  },
-];
+import { Link } from 'react-router-dom';
+import { schools } from '../../data/education';
 
 function Education() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -69,10 +41,21 @@ function Education() {
 
                   {isOpen && (
                     <div className="border-t border-gray-200 bg-gray-50 px-5 py-4">
-                      <p className="text-sm font-semibold text-gray-700">Courses</p>
-                      <ul className="mt-2 grid grid-cols-1 gap-x-6 gap-y-1 list-disc list-inside text-sm text-gray-600 sm:grid-cols-2">
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="text-sm font-semibold text-gray-700">Courses</p>
+                        <p className="text-xs text-gray-500">Click a course to open its notes page.</p>
+                      </div>
+                      <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
                         {school.courses.map((course) => (
-                          <li key={course}>{course}</li>
+                          <li key={course.slug}>
+                            <Link
+                              to={`/courses/${course.slug}`}
+                              className="flex h-full items-center justify-between rounded-lg border border-blue-100 bg-white px-3 py-2 text-sm font-medium text-blue-700 transition hover:border-blue-300 hover:bg-blue-50"
+                            >
+                              <span>{course.title}</span>
+                              <span aria-hidden="true">→</span>
+                            </Link>
+                          </li>
                         ))}
                       </ul>
                     </div>
