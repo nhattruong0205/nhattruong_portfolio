@@ -85,7 +85,9 @@ function Dashboard() {
             </div>
           </button>
           <p className="mt-3 text-center text-xs text-gray-500">Click the photo to flip.</p>
-             <p className="absolute bottom-4 left-0 right-0 text-center text-sm font-semibold text-gray-700"> <DynamicWords /> </p>
+          <div className="absolute bottom-4 left-0 right-0 text-center text-sm font-semibold text-gray-700">
+            <DynamicWords />
+          </div>
 
         </div>
       </div>
