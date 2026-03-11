@@ -17,6 +17,17 @@ export const projects = [
     videoEmbedUrl: 'https://www.youtube.com/embed/3Aw_9TBehsI',
     devpostUrl: 'https://devpost.com/software/axxess-sentinel?ref_content=my-projects-tab&ref_feature=my_projects',
   },
+  {
+    slug: 'HACKAI',
+    name: 'Iris',
+    year: '2026',
+    category: 'HACKAI 2026',
+    summary: 'Personalized AI-powered tools suggest people care about their eyes',
+    description: `We built an application with three main features: 
+    1) Classified external eye disease that one might have by uploading a photo of their eye. The Gemini 2.5 Flask multi-modal model is used for this classification task. 
+    ,
+  },
+
 ];
 
 export function getProjectBySlug(slug) {
