@@ -4,6 +4,8 @@ import headshot from '../../Images/Headshots.jpeg';
 
 function Dashboard() {
   const [isFlipped, setIsFlipped] = useState(false);
+  const researchCvUrl = `${process.env.PUBLIC_URL}/nhat_truong_cv.pdf`;
+  const workCvUrl = `${process.env.PUBLIC_URL}/1-Page%20Resume.pdf`;
 
   return (
     <section className="relative overflow-hidden">
@@ -33,14 +35,14 @@ function Dashboard() {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="/nhat_truong_cv.pdf"
+              href={researchCvUrl}
               download
               className="inline-flex items-center rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-blue-700"
             >
               Research CV
             </a>
             <a
-              href="/1-page_cv.pdf"
+              href={workCvUrl}
               download
               className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-sm font-semibold text-gray-700 transition hover:-translate-y-0.5 hover:border-gray-400 hover:text-gray-900"
             >

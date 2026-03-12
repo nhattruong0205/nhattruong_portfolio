@@ -21,7 +21,13 @@ function NavigationBar() {
     }
 
     const controller = new AbortController();
-    const apiBaseUrl = (process.env.REACT_APP_API_BASE_URL ?? '').replace(/\/$/, '');
+    const apiBaseUrl = (process.env.REACT_APP_API_BASE_URL ?? '').trim().replace(/\/$/, '');
+
+    if (!apiBaseUrl) {
+      setVisitStatus('error');
+      return undefined;
+    }
+
     const endpoint = `${apiBaseUrl}/api/visits`;
 
     async function recordVisit() {
