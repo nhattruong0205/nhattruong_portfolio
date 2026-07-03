@@ -10,6 +10,8 @@ This server provides the MongoDB-backed visit counter used by the React portfoli
 4. Install dependencies with `npm install`.
 5. Run the API with `npm run dev`.
 
+The server now auto-loads environment variables from the repo root `.env` and `server/.env`, with `server/.env` taking priority for backend settings like `MONGODB_URI`.
+
 ### Frontend
 
 In the React app, set:

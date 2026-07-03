@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { schools } from '../../data/education';
 
 function Education() {
@@ -41,20 +40,14 @@ function Education() {
 
                   {isOpen && (
                     <div className="border-t border-gray-200 bg-gray-50 px-5 py-4">
-                      <div className="flex items-center justify-between gap-3">
-                        <p className="text-sm font-semibold text-gray-700">Courses</p>
-                        <p className="text-xs text-gray-500">Click a course to open its notes page.</p>
-                      </div>
+                      <p className="text-sm font-semibold text-gray-700">Courses</p>
                       <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
                         {school.courses.map((course) => (
-                          <li key={course.slug}>
-                            <Link
-                              to={`/courses/${course.slug}`}
-                              className="flex h-full items-center justify-between rounded-lg border border-blue-100 bg-white px-3 py-2 text-sm font-medium text-blue-700 transition hover:border-blue-300 hover:bg-blue-50"
-                            >
-                              <span>{course.title}</span>
-                              <span aria-hidden="true">→</span>
-                            </Link>
+                          <li
+                            key={course}
+                            className="rounded-lg border border-blue-100 bg-white px-3 py-2 text-sm font-medium text-blue-700"
+                          >
+                            {course}
                           </li>
                         ))}
                       </ul>

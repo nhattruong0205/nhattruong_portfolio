@@ -1,7 +1,15 @@
-import 'dotenv/config';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.join(__dirname, '.env'), override: true });
 
 const app = express();
 const port = Number.parseInt(process.env.PORT ?? '4000', 10);
@@ -70,6 +78,7 @@ app.use((error, _request, response, _next) => {
 
 async function start() {
   await mongoose.connect(mongoUri);
+  console.log('Connected to MongoDB cluster');
   app.listen(port, () => {
     console.log(`Visit counter API listening on http://localhost:${port}`);
   });

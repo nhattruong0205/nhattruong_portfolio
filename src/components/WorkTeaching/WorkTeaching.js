@@ -38,9 +38,23 @@ function WorkTeaching() {
             <li> Fall 2025: Teaching Assistant for Web Programming Languages(CS6314)</li>
             <li> Spring 2026: Teaching Assistant for Programming Languages Paradigm(CS4337)</li>
             <li> Tool: HTML, CSS, JavaScript, SQL, MariaDB, Prolog, Lisp, Scheme, Racket</li>
-
           </ul>
         </div>
+                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 className="text-lg font-semibold">University of Texas at Dallas</h3>
+            <span className="text-sm text-gray-500">CS Outreach- Deep Dive AI • Summer 2026</span>
+          </div>
+          <p className="mt-2 text-sm text-gray-600">
+            Teach highschool students about AI and its applications, including hands-on projects and coding exercises using Pythons
+          </p>
+          <ul className="mt-3 list-disc pl-5 text-sm text-gray-600">
+            <li> Summer 2026: CS Outreach- Deep Dive AI</li>
+            <li> Tool: Python libraries</li>
+            <li> Topic: Linear Regression, Logistic Regression, Decision Trees, Random Forest, KNN, NN, LLM models, Deep Learning</li>
+          </ul>
+        </div>
+
       </div>
     </section>
   );
