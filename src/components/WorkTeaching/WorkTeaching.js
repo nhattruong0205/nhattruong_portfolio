@@ -9,19 +9,16 @@ function WorkTeaching() {
       <div className="space-y-4">
         <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-lg font-semibold">Data Science - Contract</h3>
-            <span className="text-sm text-gray-500">Paid Intern • Spring 2024</span>
+            <h3 className="text-lg font-semibold">University of Texas at Dallas</h3>
+            <span className="text-sm text-gray-500">CS Outreach- Deep Dive AI • Summer 2026</span>
           </div>
           <p className="mt-2 text-sm text-gray-600">
-            Built 2 analytics solutions using statistical models and visualizations. 
+            Teach highschool students about AI and its applications, including hands-on projects and coding exercises using Pythons
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-gray-600">
-            <li>Healthcare project: Identified key socioeconomic and accessibility drivers of food insecurity by applying correlation analysis, 
-              similarity metrics, and decision tree modeling to patient survey data, supporting data-driven funding allocation and stakeholder strategy decisions. </li>
-            <li>Finance project: Improved customer segmentation accuracy by 15% by analyzing 100K+ financial transactions and 
-              developing a predictability scoring framework based on transaction cadence and behavioral consistency, 
-              enabling 30/60/90-day budgeting forecasts.</li>
-            <li>Tools: Python(Pandas, NumPy, Scikit-learn), SQL, Matplotlib/Seaborn, Jupyter Notebook</li>
+            <li> Summer 2026: CS Outreach- Deep Dive AI</li>
+            <li> Tool: Python libraries</li>
+            <li> Topic: Linear Regression, Logistic Regression, Decision Trees, Random Forest, KNN, NN, LLM models, Deep Learning</li>
           </ul>
         </div>
 
@@ -40,21 +37,24 @@ function WorkTeaching() {
             <li> Tool: HTML, CSS, JavaScript, SQL, MariaDB, Prolog, Lisp, Scheme, Racket</li>
           </ul>
         </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+
+        <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-lg font-semibold">University of Texas at Dallas</h3>
-            <span className="text-sm text-gray-500">CS Outreach- Deep Dive AI • Summer 2026</span>
+            <h3 className="text-lg font-semibold">Data Science - Contract</h3>
+            <span className="text-sm text-gray-500">Paid Intern • Spring 2024</span>
           </div>
           <p className="mt-2 text-sm text-gray-600">
-            Teach highschool students about AI and its applications, including hands-on projects and coding exercises using Pythons
+            Built 2 analytics solutions using statistical models and visualizations.
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-gray-600">
-            <li> Summer 2026: CS Outreach- Deep Dive AI</li>
-            <li> Tool: Python libraries</li>
-            <li> Topic: Linear Regression, Logistic Regression, Decision Trees, Random Forest, KNN, NN, LLM models, Deep Learning</li>
+            <li>Healthcare project: Identified key socioeconomic and accessibility drivers of food insecurity by applying correlation analysis,
+              similarity metrics, and decision tree modeling to patient survey data, supporting data-driven funding allocation and stakeholder strategy decisions. </li>
+            <li>Finance project: Improved customer segmentation accuracy by 15% by analyzing 100K+ financial transactions and
+              developing a predictability scoring framework based on transaction cadence and behavioral consistency,
+              enabling 30/60/90-day budgeting forecasts.</li>
+            <li>Tools: Python(Pandas, NumPy, Scikit-learn), SQL, Matplotlib/Seaborn, Jupyter Notebook</li>
           </ul>
         </div>
-
       </div>
     </section>
   );

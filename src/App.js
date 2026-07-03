@@ -7,6 +7,7 @@ import WorkTeaching from './components/WorkTeaching/WorkTeaching';
 import Research from './components/Research/Research';
 import Projects from './components/Projects/Projects';
 import ProjectDetail from './components/Projects/ProjectDetail';
+import ResearchDetail from './components/Research/ResearchDetail';
 import AboutMe from './components/AboutMe/AboutMe';
 import ScrollSpy from './components/ScrollSpy/ScrollSpy';
 import Checklist from './components/Checklist/Checklist';
@@ -53,6 +54,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/checklist" element={<Checklist />} />
       <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
+      <Route path="/research/:researchSlug" element={<ResearchDetail />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
