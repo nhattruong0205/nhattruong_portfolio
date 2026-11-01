@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/nhattruong_portfolio/static/css/main.0b05848a.css",
+    "main.js": "/nhattruong_portfolio/static/js/main.c6dbbaed.js",
+    "static/js/453.af3a304d.chunk.js": "/nhattruong_portfolio/static/js/453.af3a304d.chunk.js",
+    "static/media/Axxess Sentinel Cover.png": "/nhattruong_portfolio/static/media/Axxess Sentinel Cover.502493a4f8f54a5c308e.png",
+    "static/media/Axxess Sentinel Cover-2.png": "/nhattruong_portfolio/static/media/Axxess Sentinel Cover-2.ebb05d6035b3e81dc8cd.png",
+    "static/media/Feature3-IrisPersonalizeReport.png": "/nhattruong_portfolio/static/media/Feature3-IrisPersonalizeReport.8c367b6dfaeac4855324.png",
+    "static/media/npjParkinsonsFig1.png": "/nhattruong_portfolio/static/media/npjParkinsonsFig1.2dcf4edd6eb4d58eb88d.png",
+    "static/media/Feature1-EyeDiseaseDetection.png": "/nhattruong_portfolio/static/media/Feature1-EyeDiseaseDetection.082df74c38dfd01d8b70.png",
+    "static/media/Iris-Page.png": "/nhattruong_portfolio/static/media/Iris-Page.9dc42e530b1cdff32596.png",
+    "static/media/Feature2-EyeExam.png": "/nhattruong_portfolio/static/media/Feature2-EyeExam.d8b2dabc2fe7382ad1c1.png",
+    "static/media/UT dallas.jpg": "/nhattruong_portfolio/static/media/UT dallas.7d4a2a01ae09a757f9bf.jpg",
+    "static/media/Beta-Amyloid PET Imaging.png": "/nhattruong_portfolio/static/media/Beta-Amyloid PET Imaging.c89bd9ae88ae00b81adf.png",
+    "static/media/Axxess Sentinel Login.png": "/nhattruong_portfolio/static/media/Axxess Sentinel Login.ea7a2ba6cc5ef58e054f.png",
+    "static/media/Risk Monitor Dashboard.png": "/nhattruong_portfolio/static/media/Risk Monitor Dashboard.7fe42952d2557be21c0f.png",
+    "static/media/Evangel Logo.png": "/nhattruong_portfolio/static/media/Evangel Logo.2f1d6ed00a62bc92a783.png",
+    "static/media/Risk Monitor Pipeline.png": "/nhattruong_portfolio/static/media/Risk Monitor Pipeline.6ea59772180572f4de53.png",
+    "static/media/ADPN.jpeg": "/nhattruong_portfolio/static/media/ADPN.7a3e0d8b7541aa823472.jpeg",
+    "static/media/scholar.png": "/nhattruong_portfolio/static/media/scholar.62cca0bff986f31d2d43.png",
+    "static/media/Headshots.jpeg": "/nhattruong_portfolio/static/media/Headshots.303cac40d3c6c91b32cc.jpeg",
+    "static/media/Adelphi.jpg": "/nhattruong_portfolio/static/media/Adelphi.f7d2b386b755108425de.jpg",
+    "static/media/mail.png": "/nhattruong_portfolio/static/media/mail.deef01ef983628822638.png",
+    "static/media/linkedin.png": "/nhattruong_portfolio/static/media/linkedin.b00639bdfe42b988595a.png",
+    "static/media/github.png": "/nhattruong_portfolio/static/media/github.f79ab9bc9ba9f7ba7c9a.png",
+    "index.html": "/nhattruong_portfolio/index.html",
+    "main.0b05848a.css.map": "/nhattruong_portfolio/static/css/main.0b05848a.css.map",
+    "main.c6dbbaed.js.map": "/nhattruong_portfolio/static/js/main.c6dbbaed.js.map",
+    "453.af3a304d.chunk.js.map": "/nhattruong_portfolio/static/js/453.af3a304d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0b05848a.css",
+    "static/js/main.c6dbbaed.js"
+  ]
+}
