@@ -3,6 +3,7 @@ import DynamicWords from '../DynamicWords/DynamicWords';
 import headshot from '../../Images/Headshots.jpeg';
 import { news } from '../../data/news';
 import { research } from '../../data/research';
+import { getLeetcodeUrl, leetcode } from '../../data/stats';
 
 const highlights = [
   {
@@ -23,6 +24,15 @@ const highlights = [
     card: 'border-violet-200 bg-violet-50',
     text: 'text-violet-700',
   },
+  ...(leetcode.solved
+    ? [{
+        value: String(leetcode.solved),
+        label: 'LeetCode solved',
+        card: 'border-orange-200 bg-orange-50',
+        text: 'text-orange-600',
+        url: getLeetcodeUrl(),
+      }]
+    : []),
 ];
 
 function Dashboard() {
@@ -86,14 +96,33 @@ function Dashboard() {
             </a>
           </div>
 
-          <dl className="grid max-w-md grid-cols-3 gap-3">
-            {highlights.map((item) => (
-              <div key={item.label} className={`rounded-2xl border px-4 py-3 shadow-sm ${item.card}`}>
-                <dt className="sr-only">{item.label}</dt>
-                <dd className={`text-2xl font-bold ${item.text}`}>{item.value}</dd>
-                <dd className="text-xs font-medium text-gray-600">{item.label}</dd>
-              </div>
-            ))}
+          <dl className="grid max-w-xl grid-cols-2 gap-3 sm:grid-flow-col sm:grid-cols-none sm:auto-cols-fr">
+            {highlights.map((item) => {
+              const content = (
+                <>
+                  <dt className="sr-only">{item.label}</dt>
+                  <dd className={`text-2xl font-bold ${item.text}`}>{item.value}</dd>
+                  <dd className="text-xs font-medium text-gray-600">{item.label}</dd>
+                </>
+              );
+              const className = `rounded-2xl border px-4 py-3 shadow-sm ${item.card}`;
+
+              return item.url ? (
+                <a
+                  key={item.label}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${className} transition hover:-translate-y-0.5 hover:shadow-md`}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={item.label} className={className}>
+                  {content}
+                </div>
+              );
+            })}
           </dl>
         </div>
 

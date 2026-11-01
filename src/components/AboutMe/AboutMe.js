@@ -2,6 +2,8 @@ import mailIcon from '../../icons/mail.png';
 import githubIcon from '../../icons/github.png';
 import scholarIcon from '../../icons/scholar.png';
 import linkedinIcon from '../../icons/linkedin.png';
+import { SiLeetcode } from 'react-icons/si';
+import { getLeetcodeUrl } from '../../data/stats';
 
 function AboutMe() {
   const socialLinks = [
@@ -27,7 +29,10 @@ function AboutMe() {
       name: 'Google Scholar',
       icon: scholarIcon,
       url: 'https://scholar.google.com/citations?hl=en&user=gbSn9voAAAAJ&view_op=list_works&gmla=AKzYXQ3cP6uenT0DhZpJs_Rr8t4hiRLrBg1klw4r2IPS6Y_d0l9A05cFbEB5A8I5iyEVUBvSjgnafwDoQ-AHVx4PRqKkSCyHHsBrQg',
-    }
+    },
+    ...(getLeetcodeUrl()
+      ? [{ name: 'LeetCode', Icon: SiLeetcode, url: getLeetcodeUrl() }]
+      : []),
   ];
 
   return (
@@ -47,7 +52,11 @@ function AboutMe() {
               className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:border-gray-300 hover:text-gray-900"
               title={social.name}
             >
-              <img src={social.icon} alt={social.name} width="18" height="18" />
+              {social.Icon ? (
+                <social.Icon className="h-[18px] w-[18px] text-orange-500" aria-hidden="true" />
+              ) : (
+                <img src={social.icon} alt={social.name} width="18" height="18" />
+              )}
               {social.name}
             </a>
           ))}
