@@ -3,19 +3,45 @@
 // To post an update, add a new object anywhere in this list (it is sorted by
 // date automatically, newest first). Fields:
 //   date  - 'YYYY-MM-DD' or 'YYYY-MM'
+//   endDate - optional last day for multi-day events, shown as a range
 //   type  - one of: 'paper', 'award', 'teaching', 'competition', 'talk', 'milestone'
 //   title - short headline
 //   venue - optional label shown next to the tag (e.g. 'CALDAM 2026')
+//   status - optional amber label after the venue (e.g. 'Ongoing')
 //   text  - optional one or two sentence description
 //   pinned - optional, keeps an item at the top regardless of date
 
 export const news = [
+  {
+    date: '2026-11-07',
+    endDate: '2026-11-08',
+    type: 'competition',
+    venue: 'HackUTD 2026',
+    status: 'Upcoming',
+    title: 'Competing at HackUTD 2026',
+  },
+  {
+    date: '2026-11-04',
+    endDate: '2026-11-05',
+    type: 'competition',
+    venue: 'NoCode Hackathon 2026',
+    status: 'Upcoming',
+    title: 'Competing at NoCode Hack',
+  },
   {
     date: '2026-10-28',
     type: 'competition',
     venue: 'Top 8 Finalist',
     title: 'AI in Finance: Situational Awareness LP',
     text: 'A daily early-warning score that tells a leveraged AI-infrastructure fund when to cut risk, built around the Situational Awareness LP case.',
+  },
+  {
+    date: '2026-10-24',
+    type: 'competition',
+    venue: 'UTD HackEdge 2026',
+    status: 'Ongoing',
+    title: 'BreathBreak: an edge-powered wearable for real-time fatigue detection',
+    text: 'ECG and PPG signals scored on-device against each worker’s baseline to prompt breathing breaks before fatigue causes accidents.',
   },
     {
     date: '2026-10',

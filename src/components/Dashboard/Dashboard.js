@@ -1,9 +1,28 @@
 import { useState } from 'react';
 import DynamicWords from '../DynamicWords/DynamicWords';
 import headshot from '../../Images/Headshots.jpeg';
+import { news } from '../../data/news';
+import { research } from '../../data/research';
 
 const highlights = [
-  { value: 'Ph.D.', label: 'CS @ UT Dallas' },
+  {
+    value: 'Ph.D.',
+    label: 'CS @ UT Dallas',
+    card: 'border-emerald-200 bg-emerald-50',
+    text: 'text-emerald-700',
+  },
+  {
+    value: String(research.length),
+    label: 'Papers',
+    card: 'border-blue-200 bg-blue-50',
+    text: 'text-blue-700',
+  },
+  {
+    value: String(news.filter((item) => item.type === 'competition' && item.status !== 'Upcoming').length),
+    label: 'Competitions',
+    card: 'border-violet-200 bg-violet-50',
+    text: 'text-violet-700',
+  },
 ];
 
 function Dashboard() {
@@ -69,10 +88,10 @@ function Dashboard() {
 
           <dl className="grid max-w-md grid-cols-3 gap-3">
             {highlights.map((item) => (
-              <div key={item.label} className="rounded-2xl border border-gray-200 bg-white/80 px-4 py-3 shadow-sm">
+              <div key={item.label} className={`rounded-2xl border px-4 py-3 shadow-sm ${item.card}`}>
                 <dt className="sr-only">{item.label}</dt>
-                <dd className="text-2xl font-bold text-gray-900">{item.value}</dd>
-                <dd className="text-xs text-gray-500">{item.label}</dd>
+                <dd className={`text-2xl font-bold ${item.text}`}>{item.value}</dd>
+                <dd className="text-xs font-medium text-gray-600">{item.label}</dd>
               </div>
             ))}
           </dl>

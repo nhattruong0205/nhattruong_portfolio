@@ -43,6 +43,23 @@ export const projects = [
 
   },
   {
+    slug: 'breathbreak',
+    name: 'BreathBreak',
+    year: '2026',
+    category: 'UTD HackEdge',
+    summary: 'An edge-powered wearable that detects worker fatigue in real time and prompts short breathing breaks.',
+    description:
+      'Employees working long shifts often experience fatigue, which reduces alertness, harms their health, and increases the risk of workplace accidents. BreathBreak is a non-invasive wearable that monitors and detects signs of fatigue during long shifts. It sends real-time fatigue alerts that prompt workers to take short breathing breaks, and gives HR weekly and monthly fatigue trend reports to help balance workloads and shift schedules. Built with Dung Anh Nguyen and Anthony Tran.',
+    detail:
+      'A TI AFE4950 acquires synchronized ECG and PPG signals, and a TI SK-AM62 compares each worker’s signals to their personal baseline and computes a fatigue score on the device. A 2-minute rest at the start of each shift sets that baseline, and each 60-second window is classified as alert or fatigued.\n\n' +
+      'We compared two models on the public WESAD (stress) and DROZY (sleep deprivation) datasets. Model A is a logistic regression on HRV features from DROZY. Model B uses transfer learning: pretrain on WESAD, then fine-tune the final layers on DROZY, since fatigue-labeled data is scarce. Transfer is not guaranteed to help, because stress is not fatigue and raw waveforms differ across sensors, so both models are evaluated on unseen people and the better one runs on BreathBreak.\n\n' +
+      'BreathBreak doesn’t change workers’ regular hours. It offers short breaks only when their body signals show they need one, which applies to long-shift work across industries, from nurses to truck drivers and factory workers. A small pause is better than a big accident.',
+    tech: ['TI AFE4950', 'TI SK-AM62', 'ECG', 'PPG', 'HRV features', 'Logistic Regression',
+      'Transfer Learning', 'WESAD', 'DROZY', 'Edge AI'],
+    videoEmbedUrl: 'https://youtu.be/BHNbs6xWSkY',
+
+  },
+  {
     slug: 'axxess-sentinel',
     name: 'Axxess Sentinel',
     year: '2026',

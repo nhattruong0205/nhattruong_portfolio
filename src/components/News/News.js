@@ -19,14 +19,18 @@ function parseNewsDate(dateString) {
   return new Date(year, month - 1, day);
 }
 
-function formatNewsDate(dateString) {
+function formatNewsDate(dateString, endDateString) {
   const hasDay = dateString.split('-').length === 3;
-
-  return new Intl.DateTimeFormat('en-US', {
+  const formatter = new Intl.DateTimeFormat('en-US', {
     month: 'short',
     day: hasDay ? 'numeric' : undefined,
     year: 'numeric',
-  }).format(parseNewsDate(dateString));
+  });
+
+  if (endDateString) {
+    return formatter.formatRange(parseNewsDate(dateString), parseNewsDate(endDateString));
+  }
+  return formatter.format(parseNewsDate(dateString));
 }
 
 function isRecent(dateString) {
@@ -69,11 +73,14 @@ function News() {
               <article className="rounded-2xl border border-gray-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md">
                 <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
                   <time dateTime={item.date} className="uppercase tracking-wide text-gray-500">
-                    {formatNewsDate(item.date)}
+                    {formatNewsDate(item.date, item.endDate)}
                   </time>
                   <span className={`rounded-full px-2.5 py-0.5 ${style.chip}`}>{style.label}</span>
                   {item.venue ? (
                     <span className="rounded-full border border-red-200 bg-red-50 px-2.5 py-0.5 text-red-700">{item.venue}</span>
+                  ) : null}
+                  {item.status ? (
+                    <span className="rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-amber-700">{item.status}</span>
                   ) : null}
                   {isRecent(item.date) ? (
                     <span className="rounded-full bg-red-500 px-2.5 py-0.5 text-white">New</span>
