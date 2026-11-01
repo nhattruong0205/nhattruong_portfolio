@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { schools } from '../../data/education';
+import SectionHeading from '../SectionHeading/SectionHeading';
 
 function Education() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section id="education" className="px-6 py-12 space-y-6 max-w-4xl mx-auto">
-      <div className="space-y-2">
-        <h2 className="text-2xl font-bold">Education</h2>
-        <p className="text-gray-600">Academic background and highlights.</p>
-      </div>
+    <section className="space-y-8">
+      <SectionHeading eyebrow="Background" title="Education" description="Academic background and highlights." />
 
       <div className="space-y-6">
         {schools.map((school, index) => {

@@ -1,60 +1,48 @@
+import { work } from '../../data/work';
+import SectionHeading from '../SectionHeading/SectionHeading';
+
 function WorkTeaching() {
   return (
-    <section className="space-y-6">
-      <div className="space-y-2">
-        <h2 className="text-2xl font-bold">Work & Teaching</h2>
-        <p className="text-gray-600">Internships and teaching roles.</p>
-      </div>
+    <section className="space-y-8">
+      <SectionHeading eyebrow="Experience" title="Work & Teaching" description="Internships and teaching roles." />
 
       <div className="space-y-4">
-        <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-lg font-semibold">University of Texas at Dallas</h3>
-            <span className="text-sm text-gray-500">CS Outreach- Deep Dive AI • Summer 2026</span>
-          </div>
-          <p className="mt-2 text-sm text-gray-600">
-            Teach highschool students about AI and its applications, including hands-on projects and coding exercises using Pythons
-          </p>
-          <ul className="mt-3 list-disc pl-5 text-sm text-gray-600">
-            <li> Summer 2026: CS Outreach- Deep Dive AI</li>
-            <li> Tool: Python libraries</li>
-            <li> Topic: Linear Regression, Logistic Regression, Decision Trees, Random Forest, KNN, NN, LLM models, Deep Learning</li>
-          </ul>
-        </div>
-
-        <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-lg font-semibold">University of Texas at Dallas</h3>
-            <span className="text-sm text-gray-500">Teaching Assistant • Fall 2024-Present</span>
-          </div>
-          <p className="mt-2 text-sm text-gray-600">
-            Assisted with coursework, student support, and grading.
-          </p>
-          <ul className="mt-3 list-disc pl-5 text-sm text-gray-600">
-            <li> Fall 2024-Spring 2025: Teaching Assistant for Discrete Mathematics for Computing I(CS2305)</li>
-            <li> Fall 2025: Teaching Assistant for Web Programming Languages(CS6314)</li>
-            <li> Spring 2026: Teaching Assistant for Programming Languages Paradigm(CS4337)</li>
-            <li> Tool: HTML, CSS, JavaScript, SQL, MariaDB, Prolog, Lisp, Scheme, Racket</li>
-          </ul>
-        </div>
-
-        <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-lg font-semibold">Data Science - Contract</h3>
-            <span className="text-sm text-gray-500">Paid Intern • Spring 2024</span>
-          </div>
-          <p className="mt-2 text-sm text-gray-600">
-            Built 2 analytics solutions using statistical models and visualizations.
-          </p>
-          <ul className="mt-3 list-disc pl-5 text-sm text-gray-600">
-            <li>Healthcare project: Identified key socioeconomic and accessibility drivers of food insecurity by applying correlation analysis,
-              similarity metrics, and decision tree modeling to patient survey data, supporting data-driven funding allocation and stakeholder strategy decisions. </li>
-            <li>Finance project: Improved customer segmentation accuracy by 15% by analyzing 100K+ financial transactions and
-              developing a predictability scoring framework based on transaction cadence and behavioral consistency,
-              enabling 30/60/90-day budgeting forecasts.</li>
-            <li>Tools: Python(Pandas, NumPy, Scikit-learn), SQL, Matplotlib/Seaborn, Jupyter Notebook</li>
-          </ul>
-        </div>
+        {work.map((job) => (
+          <article
+            key={`${job.role}-${job.period}`}
+            className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <div className="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">{job.role}</h3>
+                <p className="text-sm font-medium text-blue-700">{job.organization}</p>
+              </div>
+              <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">
+                {job.period}
+              </span>
+            </div>
+            <p className="mt-3 text-sm text-gray-600">{job.summary}</p>
+            {job.highlights.length > 0 ? (
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-600">
+                {job.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            ) : null}
+            {job.tools.length > 0 ? (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {job.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-blue-100 bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+          </article>
+        ))}
       </div>
     </section>
   );

@@ -9,8 +9,39 @@ import irisFeature1 from '../components/Projects/Feature1-EyeDiseaseDetection.pn
 import irisFeature2 from '../components/Projects/Feature2-EyeExam.png';
 import irisFeature3 from '../components/Projects/Feature3-IrisPersonalizeReport.png';
 
+// Image for Thematic Risk Monitor project
+import riskMonitorPipeline from '../components/Projects/Risk Monitor Pipeline.png';
+import riskMonitorDashboard from '../components/Projects/Risk Monitor Dashboard.png';
 
 export const projects = [
+  {
+    slug: 'thematic-risk-monitor',
+    name: 'Thematic Risk Monitor',
+    year: '2026',
+    category: 'AI in Finance',
+    coverImages: [
+      {
+        src: riskMonitorPipeline,
+        alt: 'Thematic Risk Monitor pipeline: collect, signals, normalize, score, act',
+      },
+      {
+        src: riskMonitorDashboard,
+        alt: 'Live Thematic Risk Monitor dashboard with risk score, signals, holdings and news feed',
+      },
+    ],
+    coverAlt: 'Thematic Risk Monitor preview',
+    summary: 'A daily early-warning score that tells a leveraged AI-infrastructure fund when to cut risk.',
+    description:
+      'Built around the Situational Awareness LP case: a concentrated, leveraged AI-infrastructure fund that lost about two-thirds of its value when AI stocks sold off in 2026. Shocks can’t be predicted, but fragility can be measured. The monitor reads free public data each day and outputs a 0–100 risk score, a regime (NORMAL, ELEVATED or DE-RISK), and an action: hold, reduce leverage, or reduce leverage and close call positions.',
+    detail:
+      'Twelve signals are computed on the fund’s holdings basket in two layers. Fragility signals (stretch above the 200-day average, pairwise correlation, realized volatility) build slowly and say how much a selloff would hurt. Trigger signals (trend break, breadth, drawdown, divergence from the S&P 500, VIX spike and term structure, leader churn, and news sentiment) move fast and say that one is starting.\n\n' +
+      'Each signal is ranked against the theme’s own trailing two years with no look-ahead, then blended (35% fragility, 65% trigger), smoothed, and floored by circuit breakers. For the news layer, Claude reads up to 150 recent headlines and tags each with relevance, tone, severity and risk driver (AI capex, data-center debt, memory prices, Taiwan, bubble, macro).\n\n' +
+      'In a 2017–2026 backtest on price signals alone, 18 of 25 alarms were followed by a 10%+ drop, the score warned 3 trading days before the June 2026 selloff, and following the actions improved Sharpe from 1.12 to 1.19 while cutting max drawdown from −83.5% to −72.3% versus staying 2x levered. It runs daily, as a live terminal monitor, or as a live browser dashboard with charts and a news feed.',
+    tech: ['Python', 'pandas', 'NumPy', 'SciPy', 'yfinance', 'Claude API', 'VADER',
+      'feedparser', 'Matplotlib', 'Chart.js', 'HTML/CSS/JavaScript'],
+      videoEmbedUrl: 'https://youtu.be/aQi-5O8ehfM',
+
+  },
   {
     slug: 'axxess-sentinel',
     name: 'Axxess Sentinel',

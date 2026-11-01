@@ -80,22 +80,26 @@ function ProjectDetail() {
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Detail</h2>
-        <p className="text-gray-700">{project.detail}</p>
+        {project.detail.split('\n\n').map((paragraph) => (
+          <p key={paragraph.slice(0, 40)} className="text-gray-700">{paragraph}</p>
+        ))}
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Demo Video</h2>
-        <div className="aspect-video overflow-hidden rounded-xl border border-gray-200 bg-black">
-          <iframe
-            src={videoSrc}
-            title={`${project.name} demo video`}
-            className="h-full w-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        </div>
-      </section>
+      {videoSrc ? (
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold">Demo Video</h2>
+          <div className="aspect-video overflow-hidden rounded-xl border border-gray-200 bg-black">
+            <iframe
+              src={videoSrc}
+              title={`${project.name} demo video`}
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </section>
+      ) : null}
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Tech Stack</h2>
@@ -111,16 +115,18 @@ function ProjectDetail() {
         </ul>
       </section>
 
-      <div>
-        <a
-          href={project.devpostUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800"
-        >
-          View on Devpost
-        </a>
-      </div>
+      {project.devpostUrl ? (
+        <div>
+          <a
+            href={project.devpostUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800"
+          >
+            View on Devpost
+          </a>
+        </div>
+      ) : null}
     </main>
   );
 }

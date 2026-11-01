@@ -2,7 +2,10 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Dashboard from './components/Dashboard/Dashboard';
 import NavigationBar from './components/NavigationBar/NavigationBar';
+import { MemoryRouter } from 'react-router-dom';
 import Checklist from './components/Checklist/Checklist';
+import News from './components/News/News';
+import { news } from './data/news';
 
 afterEach(() => {
   window.localStorage.clear();
@@ -20,6 +23,25 @@ test('navigation bar does not expose the checklist link', () => {
 
   expect(screen.queryByText('Checklist')).not.toBeInTheDocument();
   expect(screen.getByText('Projects')).toBeInTheDocument();
+});
+
+test('news timeline shows the latest updates first and can expand', async () => {
+  render(
+    <MemoryRouter>
+      <News />
+    </MemoryRouter>
+  );
+
+  const items = screen.getAllByRole('listitem');
+  expect(items).toHaveLength(Math.min(news.length, 5));
+
+  const newest = [...news].sort((a, b) => b.date.localeCompare(a.date))[0];
+  expect(items[0]).toHaveTextContent(newest.title);
+
+  if (news.length > 5) {
+    await userEvent.click(screen.getByRole('button', { name: /show all/i }));
+    expect(screen.getAllByRole('listitem')).toHaveLength(news.length);
+  }
 });
 
 test('checklist adds tasks without a login flow', async () => {

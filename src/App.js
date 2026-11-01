@@ -11,39 +11,37 @@ import ResearchDetail from './components/Research/ResearchDetail';
 import AboutMe from './components/AboutMe/AboutMe';
 import ScrollSpy from './components/ScrollSpy/ScrollSpy';
 import Checklist from './components/Checklist/Checklist';
+import News from './components/News/News';
+import { sections } from './data/sections';
 
-const sections = [
-  { id: 'dashboard', label: 'Home' },
-  { id: 'education', label: 'Education' },
-  { id: 'research', label: 'Research' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'work', label: 'Work' },
-  { id: 'aboutme', label: 'About' },
-];
+const sectionClassName = 'mx-auto max-w-4xl px-6 py-16';
 
 function HomePage() {
   return (
     <div className="app-container">
       <NavigationBar />
       <ScrollSpy sections={sections} />
-      <section id="dashboard" className="pt-20">
+      <section id="dashboard" className="pt-16">
         <Dashboard />
       </section>
-      <section id="education">
-        <Education/>
+      <section id="news" className={sectionClassName}>
+        <News />
       </section>
-      <section id="research" className="px-6 py-12 max-w-4xl mx-auto">
+      <section id="education" className={sectionClassName}>
+        <Education />
+      </section>
+      <section id="research" className={sectionClassName}>
         <Research />
       </section>
-      <section id="projects" className="px-6 py-12 max-w-4xl mx-auto">
+      <section id="projects" className={sectionClassName}>
         <Projects />
       </section>
-      <section id="work" className="px-6 py-12 max-w-4xl mx-auto">
+      <section id="work" className={sectionClassName}>
         <WorkTeaching />
       </section>
-      <section id="aboutme">
-        <AboutMe/>
-        </section>
+      <section id="aboutme" className="mt-12">
+        <AboutMe />
+      </section>
     </div>
   );
 }

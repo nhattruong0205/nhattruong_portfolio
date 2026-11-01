@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from '../../data/projects';
+import SectionHeading from '../SectionHeading/SectionHeading';
 
 function getProjectCoverImages(project) {
   if (Array.isArray(project.coverImages) && project.coverImages.length > 0) {
@@ -83,12 +84,12 @@ function Projects() {
   }
 
   return (
-    <section className="space-y-6">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="space-y-2">
-          <h2 className="text-2xl font-bold">Projects & Hackathons</h2>
-          <p className="text-gray-600">Selected builds, research demos, and competitions.</p>
-        </div>
+    <section className="space-y-8">
+      <SectionHeading
+        eyebrow="Builds"
+        title="Projects & Hackathons"
+        description="Selected builds, research demos, and competitions."
+      >
         <div className="flex items-center gap-3">
           <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-600">
             {activeIndex + 1} / {projects.length}
@@ -110,7 +111,7 @@ function Projects() {
             →
           </button>
         </div>
-      </div>
+      </SectionHeading>
 
       <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md">

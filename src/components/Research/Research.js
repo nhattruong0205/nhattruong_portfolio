@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { research } from '../../data/research';
 import { researchGroups } from '../../data/researchGroups';
+import SectionHeading from '../SectionHeading/SectionHeading';
 
 function Research() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,16 +18,13 @@ function Research() {
 
   return (
     <section className="space-y-10">
-      <div className="space-y-2">
-        <h2 className="text-2xl font-bold">Research</h2>
-        <p className="text-gray-600">Research roles and publications.</p>
-      </div>
+      <SectionHeading eyebrow="Publications" title="Research" description="Research groups and published papers." />
 
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-gray-900">Research Groups</h3>
         <div className="space-y-4">
           {researchGroups.map((group) => (
-            <div key={group.name} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div key={group.name} className="rounded-2xl border border-gray-200 border-l-4 border-l-blue-500 bg-white p-5 shadow-sm">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h4 className="text-lg font-semibold">{group.name}</h4>
                 <span className="text-sm text-gray-500">
@@ -114,11 +112,10 @@ function Research() {
                     key={entry.slug}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`w-full rounded-xl border px-4 py-3 text-left transition ${
-                      isActive
+                    className={`w-full rounded-xl border px-4 py-3 text-left transition ${isActive
                         ? 'border-blue-300 bg-blue-50'
                         : 'border-gray-200 bg-white hover:border-blue-200 hover:bg-gray-50'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <div>

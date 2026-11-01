@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function DynamicWords() {
+function DynamicWords({ className = '' }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const words = ['Developer', 'Data Scientist', 'Researcher'];
   const [currentWord, setCurrentWord] = useState('');
@@ -24,15 +24,16 @@ function DynamicWords() {
         setIsDeleting(false);
         setIndex((prev) => (prev + 1) % words.length);
       }
-    }, isDeleting ? 60 : 60); // Speed of typing and deleting
+    }, isDeleting ? 60 : 90); // Speed of typing and deleting
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [index, charIndex, isDeleting, words]);
 
   return (
-    <div className="text-3xl font-bold text-center">
-      <span> {currentWord}</span>
-    </div>
+    <span className={className}>
+      {currentWord}
+      <span className="ml-0.5 inline-block w-[2px] animate-pulse bg-current align-middle" style={{ height: '1em' }} aria-hidden="true" />
+    </span>
   );
 }
 

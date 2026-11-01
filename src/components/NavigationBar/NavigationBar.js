@@ -1,43 +1,25 @@
+import { sections } from '../../data/sections';
+
 function NavigationBar() {
+  const links = sections.filter((section) => section.id !== 'dashboard');
+
   return (
-    <nav className="fixed inset-x-0 top-0 z-20 border-b border-gray-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-6 px-6 py-4">
-        <a
-          href="#dashboard"
-          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
-        >
-          Dashboard
+    <nav className="fixed inset-x-0 top-0 z-30 border-b border-gray-200/70 bg-white/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-6 px-6 py-3">
+        <a href="#dashboard" className="shrink-0 text-base font-bold tracking-tight text-gray-900">
+          Nhat Truong<span className="text-blue-600">.</span>
         </a>
-        <a
-          href="#education"
-          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
-        >
-          Education
-        </a>
-        <a
-          href="#research"
-          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
-        >
-          Research
-        </a>
-        <a
-          href="#work"
-          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
-        >
-          Work & Teaching
-        </a>
-        <a
-          href="#projects"
-          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
-        >
-          Projects
-        </a>
-        <a
-          href="#aboutme"
-          className="text-sm font-semibold uppercase tracking-wide text-gray-600 transition hover:text-gray-900"
-        >
-          About Me
-        </a>
+        <div className="-mr-2 flex items-center gap-1 overflow-x-auto">
+          {links.map((section) => (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              className="whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+            >
+              {section.label}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   );

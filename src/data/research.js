@@ -1,6 +1,25 @@
 import betaAmyloidPetImaging from '../components/Research/Beta-Amyloid PET Imaging.png';
 import ADPN from '../components/Research/ADPN.jpeg';
+import FPDRP from '../components/Research/npjParkinsonsFig1.png';
 export const research = [
+    {
+    slug: 'rsfmri-network-topographies-preclinical-early-pd',
+    name: 'Resting state fMRI network topographies in preclinical and early Parkinson’s disease stages',
+    category: 'VONN LAB',
+    year: 'Fall 2026', // fill in your working period
+    coverImage: {
+      src: FPDRP, // e.g. import FPDRP from Fig. 1 (fPDRP / fPDCP maps)
+      alt: 'fMRI-derived Parkinson’s disease-related (fPDRP) and cognition-related (fPDCP) network maps',
+    },
+    summary:
+      'An explainable-AI pipeline (ICA + SVM + LIME) that derives resting-state fMRI analogs of the PET-based Parkinson’s motor and cognitive networks and tracks them from genetic risk carriers to early clinical disease.',
+    description:
+      'Parkinson’s disease pathology begins years before motor symptoms appear. FDG-PET has established two disease-specific brain networks: a motor-related pattern (PDRP) and a cognition-related pattern (PDCP). PET is costly and hard to access, though. We asked whether analogous networks could be recovered from resting-state fMRI, and whether they are already detectable in first-degree relatives who carry PD-associated GBA1 or LRRK2 mutations but have no symptoms. This would give a more accessible marker of early PD risk and progression.',
+    detail:
+      'We analyzed 295 rs-fMRI datasets from 52 early PD patients, 92 non-manifesting mutation carriers (47 GBA1, 45 LRRK2), and 58 healthy non-carriers. After preprocessing in SPM12/CONN, group independent component analysis (GIFT) extracted 40 components. 32 of these were retained after noise removal, and each was scored at two subject-specific thresholds, giving 64 features for a linear SVM. Under repeated five-fold cross-validation, the SVM separated PD from non-carriers with 78% mean and 87% peak accuracy.\n\nLIME explanations attributed each prediction to individual components. Components whose LIME values correlated with UPDRS-III defined the fMRI-derived motor pattern (fPDRP). Components correlated with MoCA defined the cognitive pattern (fPDCP).\n\nBoth patterns were elevated in clinical PD relative to preclinical groups. fPDRP rose in a graded way from non-carriers, through mutation carriers and high-risk individuals, to clinical PD. Among preclinical participants, those with high MDS prodromal likelihood ratios (≥ 60) showed elevated fPDRP but unchanged fPDCP. In clinical PD, neither genotype nor CSF α-synuclein seed amplification status changed pattern expression. The patterns reproduced in an independent cohort of 33 carriers followed for about ten years. The eight who converted to PD showed numerically, though not significantly, higher baseline fPDRP.',
+    tech: ['Resting-State fMRI', 'Group ICA (GIFT)', 'Support Vector Machine (SVM)', 'LIME (Explainable AI)', 'SPM12 / CONN', 'MATLAB'],
+    paperUrl: 'https://doi.org/10.1038/s41531-026-01584-5',
+  },
   {
     slug: 'permutation-codes-generalized-kendall-tau-metric',
     name: 'Constructing Permutation Codes Under the Generalized Kendall-τ Metric',
