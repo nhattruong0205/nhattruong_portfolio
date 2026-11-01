@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/nhattruong_portfolio/static/css/main.0b05848a.css",
-    "main.js": "/nhattruong_portfolio/static/js/main.c6dbbaed.js",
+    "main.css": "/nhattruong_portfolio/static/css/main.1a574146.css",
+    "main.js": "/nhattruong_portfolio/static/js/main.a1fb5445.js",
     "static/js/453.af3a304d.chunk.js": "/nhattruong_portfolio/static/js/453.af3a304d.chunk.js",
     "static/media/Axxess Sentinel Cover.png": "/nhattruong_portfolio/static/media/Axxess Sentinel Cover.502493a4f8f54a5c308e.png",
     "static/media/Axxess Sentinel Cover-2.png": "/nhattruong_portfolio/static/media/Axxess Sentinel Cover-2.ebb05d6035b3e81dc8cd.png",
@@ -24,12 +24,12 @@
     "static/media/linkedin.png": "/nhattruong_portfolio/static/media/linkedin.b00639bdfe42b988595a.png",
     "static/media/github.png": "/nhattruong_portfolio/static/media/github.f79ab9bc9ba9f7ba7c9a.png",
     "index.html": "/nhattruong_portfolio/index.html",
-    "main.0b05848a.css.map": "/nhattruong_portfolio/static/css/main.0b05848a.css.map",
-    "main.c6dbbaed.js.map": "/nhattruong_portfolio/static/js/main.c6dbbaed.js.map",
+    "main.1a574146.css.map": "/nhattruong_portfolio/static/css/main.1a574146.css.map",
+    "main.a1fb5445.js.map": "/nhattruong_portfolio/static/js/main.a1fb5445.js.map",
     "453.af3a304d.chunk.js.map": "/nhattruong_portfolio/static/js/453.af3a304d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b05848a.css",
-    "static/js/main.c6dbbaed.js"
+    "static/css/main.1a574146.css",
+    "static/js/main.a1fb5445.js"
   ]
 }
