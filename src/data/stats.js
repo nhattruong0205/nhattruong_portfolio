@@ -2,7 +2,7 @@
 // `solved` is set, and the footer link once `username` is set.
 export const leetcode = {
   username: 'minhnhatbap',   // from https://leetcode.com/u/<username>/
-  solved: 18,   // update by hand whenever you like
+  solved: 21,   // update by hand whenever you like
 };
 
 export function getLeetcodeUrl() {
