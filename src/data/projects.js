@@ -13,7 +13,71 @@ import irisFeature3 from '../components/Projects/Feature3-IrisPersonalizeReport.
 import riskMonitorPipeline from '../components/Projects/Risk Monitor Pipeline.png';
 import riskMonitorDashboard from '../components/Projects/Risk Monitor Dashboard.png';
 
+// Image for FutureMe project
+import futureMeHome from '../components/Projects/FutureMe Home.png';
+
+// Image for Oilgorithm project
+import oilgorithmHomepage from '../components/Projects/Oilgorithm Homepage.png';
+import oilgorithmSystemMap from '../components/Projects/Oilgorithm System Map.png';
+import oilgorithmLeakageError from '../components/Projects/Oilgorithm Leakage Error.png';
+import oilgorithmIncidentReport from '../components/Projects/Oilgorithm Incident Report.png';
+import oilgorithmIncidentLog from '../components/Projects/Oilgorithm Incident Log.png';
+
 export const projects = [
+  {
+    slug: 'page-one-builder',
+    name: 'Page One Builder',
+    year: '2026',
+    category: 'UT Dallas Hackathon',
+    summary: 'Win the restaurant searches that matter, from the customers who actually come.',
+    description:
+      'Built for LLMSoftware’s challenge at the UT Dallas Hackathon (Nov 14, 2026). When someone nearby searches “biryani near me”, the top 3 restaurants on Google Maps get most of the calls and orders, and more people now ask AI assistants like ChatGPT and Google’s AI Overviews where to eat. Most small restaurants don’t know which searches they should win, or what to fix to get there.',
+    detail:
+      'The challenge was to build a tool that, for one restaurant, finds 10 keywords it should rank for (by dish, cuisine plus area, and need), checks where it stands today on Google Maps (local SEO), Google’s first page (SEO) and AI answers (AEO), compares its Google Business Profile with whoever is winning each keyword, and generates ready-to-paste fixes: a better business description, weekly Google posts, keyword-rich menu descriptions, web pages, FAQ answers, schema markup and a review request for real customers.\n\n' +
+      'We solved the keyword problem, and also raised a bigger question: what is the point of ranking high for a keyword if the people searching it aren’t your customers? So we built a customer heatmap that shows where the restaurant’s real customers come from. It focuses keyword choices on the people who actually come, and points to areas with no customers yet, where the restaurant can advertise with flyers or coupons. Since social media algorithms suggest the same content to people in the same area, reaching a few customers in a new neighborhood helps reach their neighbors too.',
+    tech: ['Python', 'Google Colab', 'Gemini API', 'Local SEO', 'AEO', 'Schema Markup', 'Heatmap'],
+  },
+  {
+    slug: 'oilgorithm',
+    name: 'Oilgorithm',
+    year: '2026',
+    category: 'HackUTD',
+    coverImages: [
+      { src: oilgorithmHomepage, alt: 'Oilgorithm homepage' },
+      { src: oilgorithmSystemMap, alt: 'System map of the water disposal network' },
+      { src: oilgorithmLeakageError, alt: 'Facility map with a detected pipeline leak' },
+      { src: oilgorithmIncidentReport, alt: 'Incident report' },
+      { src: oilgorithmIncidentLog, alt: 'Incident log and crew directory' },
+    ],
+    coverAlt: 'Oilgorithm dashboard preview',
+    summary: 'Find failures early, where they are, and act at the lowest cost.',
+    description:
+      'Built for EOG Resources’ challenge at HackUTD 2026: ZeroDay. Their salt-water disposal system only reports a failure once a sensor crosses a hard limit, and by then the damage is already growing. Oilgorithm is a dashboard that reads the network’s sensor telemetry, locates the problem on a live map, catches it at its early stage, and suggests the cheapest response. Built with Ky Anh Vo and Anh Phan.',
+    detail:
+      'Oilgorithm pinpoints where a failure is happening (the facility, the pump or the pipeline) and catches pipeline leaks at their first pressure drop, before they grow into a spill. For pumps, it holds the inspector until several signals agree the pump is really wearing out, so every trip finds a real problem. It then ranks the possible responses by cost and reaches the right people, with the level of control matched to the risk.\n\n' +
+      'We built heuristics on the sensor readings, and for early detection trained an offline clustering model on each facility’s data from before past errors to find warning patterns. Replaying a full week of telemetry, it warned of 3 pump failures 34 hours ahead on average and caught 5 leaks about 2 minutes after they started, flagging all 5 before the standard check confirmed them. The hardest parts were interpreting the data from scratch and tuning early detection with clustering alone.',
+    tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'Clustering', 'Sensor Telemetry'],
+    videoEmbedUrl: 'https://www.youtube.com/embed/s4u-c1MKe0w',
+    devpostUrl: 'https://devpost.com/software/oil-er-rithm',
+  },
+  {
+    slug: 'futureme',
+    name: 'FutureMe',
+    year: '2026',
+    category: 'UTD No-Code Hackathon',
+    coverImages: [
+      { src: futureMeHome, alt: 'FutureMe landing page: “Who do you want to become?”' },
+    ],
+    summary: 'Meet the person you’re becoming: type a dream job and get a clear, game-style path to get there.',
+    description:
+      'Students know the job they want, but not what it takes to get there. Comparing courses, certificates and study resources takes weeks, and every option leads to more options, so motivation runs out before studying even starts. FutureMe turns a dream job into a clear path in minutes and builds both the skills and the mindset the job needs.',
+    detail:
+      'FutureMe searches real job postings for the role you want and pulls out the skills, courses and certificates employers ask for. It shows the rewards and challenges of the job, told by people who did it, so you know what to expect before you commit. It then lays out a roadmap of courses, YouTube videos and certificates in order, with why each step matters and how long it takes.\n\n' +
+      'Learning is game-style: five-minute lessons, practice quizzes with instant feedback after each lesson, XP, streaks, and daily reminders that keep you on schedule for your target date. A counselor view shows each student’s goal, current step and streak, and flags anyone inactive for 3+ days as “Needs a nudge.”\n\n' +
+      'It starts with individual students and is designed to grow to schools, where counselors assign courses and milestones to a class, and to employers training new hires on the skills and certificates each role needs. Built without code using Lovable.',
+    tech: ['Lovable', 'No-Code', 'AI', 'Job Posting Search', 'Gamified Learning'],
+    demoUrl: 'https://nhat-truong-futureme-nocode.lovable.app',
+  },
   {
     slug: 'thematic-risk-monitor',
     name: 'Thematic Risk Monitor',
@@ -47,9 +111,10 @@ export const projects = [
     name: 'BreathBreak',
     year: '2026',
     category: 'UTD HackEdge',
+    award: '2nd Place',
     summary: 'An edge-powered wearable that detects worker fatigue in real time and prompts short breathing breaks.',
     description:
-      'Employees working long shifts often experience fatigue, which reduces alertness, harms their health, and increases the risk of workplace accidents. BreathBreak is a non-invasive wearable that monitors and detects signs of fatigue during long shifts. It sends real-time fatigue alerts that prompt workers to take short breathing breaks, and gives HR weekly and monthly fatigue trend reports to help balance workloads and shift schedules. Built with Dung Anh Nguyen and Anthony Tran.',
+      'Employees working long shifts often experience fatigue, which reduces alertness, harms their health, and increases the risk of workplace accidents. BreathBreak is a non-invasive wearable that monitors and detects signs of fatigue during long shifts. It sends real-time fatigue alerts that prompt workers to take short breathing breaks, and gives HR weekly and monthly fatigue trend reports to help balance workloads and shift schedules. Built with Dung Anh Nguyen and Anthony Tran, and won 2nd place at UTD HackEdge 2026.',
     detail:
       'A TI AFE4950 acquires synchronized ECG and PPG signals, and a TI SK-AM62 compares each worker’s signals to their personal baseline and computes a fatigue score on the device. A 2-minute rest at the start of each shift sets that baseline, and each 60-second window is classified as alert or fatigued.\n\n' +
       'We compared two models on the public WESAD (stress) and DROZY (sleep deprivation) datasets. Model A is a logistic regression on HRV features from DROZY. Model B uses transfer learning: pretrain on WESAD, then fine-tune the final layers on DROZY, since fatigue-labeled data is scarce. Transfer is not guaranteed to help, because stress is not fatigue and raw waveforms differ across sensors, so both models are evaluated on unseen people and the better one runs on BreathBreak.\n\n' +
@@ -131,4 +196,55 @@ export const projects = [
 
 export function getProjectBySlug(slug) {
   return projects.find((project) => project.slug === slug);
+}
+
+export function getProjectCoverImages(project) {
+  if (Array.isArray(project.coverImages) && project.coverImages.length > 0) {
+    return project.coverImages;
+  }
+
+  if (project.coverImageUrl) {
+    return [
+      {
+        src: project.coverImageUrl,
+        alt: project.coverAlt ?? `${project.name} cover`,
+      },
+    ];
+  }
+
+  if (!project.videoEmbedUrl) {
+    return [];
+  }
+
+  try {
+    const parsed = new URL(project.videoEmbedUrl);
+    const host = parsed.hostname.replace(/^www\./, '');
+
+    if (host === 'youtu.be') {
+      const videoId = parsed.pathname.replace('/', '');
+      return videoId
+        ? [{ src: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`, alt: project.coverAlt ?? `${project.name} cover` }]
+        : [];
+    }
+
+    if (host === 'youtube.com' || host === 'm.youtube.com') {
+      if (parsed.pathname.startsWith('/embed/')) {
+        const videoId = parsed.pathname.split('/')[2];
+        return videoId
+          ? [{ src: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`, alt: project.coverAlt ?? `${project.name} cover` }]
+          : [];
+      }
+
+      if (parsed.pathname === '/watch') {
+        const videoId = parsed.searchParams.get('v');
+        return videoId
+          ? [{ src: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`, alt: project.coverAlt ?? `${project.name} cover` }]
+          : [];
+      }
+    }
+  } catch (error) {
+    return [];
+  }
+
+  return [];
 }

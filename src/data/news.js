@@ -8,25 +8,40 @@
 //   title - short headline
 //   venue - optional label shown next to the tag (e.g. 'CALDAM 2026')
 //   status - optional amber label after the venue (e.g. 'Ongoing')
+//   award - optional gold trophy badge for a win (e.g. '2nd Place')
 //   text  - optional one or two sentence description
 //   pinned - optional, keeps an item at the top regardless of date
 
 export const news = [
   {
+    date: '2027-03',
+    type: 'competition',
+    venue: 'Draper Pitch Competition 2027',
+    status: 'Upcoming',
+    title: 'Competing in the 2027 Draper Pitch Competition',
+  },
+  {
+    date: '2026-11-14',
+    type: 'competition',
+    venue: 'UT Dallas Hackathon 2026',
+    title: 'Built Page One Builder with a customer heatmap at UT Dallas Hackathon 2026',
+    text: 'LLMSoftware’s challenge: help a restaurant reach the top of Google Maps and AI answers for 10 keywords. We added a customer heatmap so the keywords and ads target the people who actually come.',
+  },
+  {
     date: '2026-11-07',
     endDate: '2026-11-08',
     type: 'competition',
-    venue: 'HackUTD 2026',
-    status: 'Upcoming',
-    title: 'Competing at HackUTD 2026',
+    venue: 'HackUTD 2026: ZeroDay',
+    title: 'Built Oilgorithm at HackUTD 2026',
+    text: 'An early-warning dashboard for EOG Resources’ salt-water disposal network that warned of pump failures 34 hours ahead on average.',
   },
   {
     date: '2026-11-04',
     endDate: '2026-11-05',
     type: 'competition',
     venue: 'NoCode Hackathon 2026',
-    status: 'Upcoming',
-    title: 'Competing at NoCode Hack',
+    title: 'Built FutureMe at UTD’s No-Code Hackathon',
+    text: 'Type a dream job and get a clear path: requirements from real job postings, insights from people who did the job, and a roadmap of courses and certificates with quizzes and streaks.',
   },
   {
     date: '2026-10-28',
@@ -36,11 +51,11 @@ export const news = [
     text: 'A daily early-warning score that tells a leveraged AI-infrastructure fund when to cut risk, built around the Situational Awareness LP case.',
   },
   {
-    date: '2026-10-24',
+    date: '2026-11-20',
     type: 'competition',
     venue: 'UTD HackEdge 2026',
-    status: 'Ongoing',
-    title: 'BreathBreak: an edge-powered wearable for real-time fatigue detection',
+    award: '2nd Place',
+    title: 'Won 2nd place with BreathBreak, an edge-powered wearable for real-time fatigue detection',
     text: 'ECG and PPG signals scored on-device against each worker’s baseline to prompt breathing breaks before fatigue causes accidents.',
   },
     {

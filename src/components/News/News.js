@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { news } from '../../data/news';
 import SectionHeading from '../SectionHeading/SectionHeading';
+import AwardBadge from '../AwardBadge/AwardBadge';
 
 const INITIAL_COUNT = 5;
 const NEW_BADGE_DAYS = 45;
@@ -79,6 +80,7 @@ function News() {
                   {item.venue ? (
                     <span className="rounded-full border border-red-200 bg-red-50 px-2.5 py-0.5 text-red-700">{item.venue}</span>
                   ) : null}
+                  {item.award ? <AwardBadge award={item.award} /> : null}
                   {item.status ? (
                     <span className="rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-amber-700">{item.status}</span>
                   ) : null}
